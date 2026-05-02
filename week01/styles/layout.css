@@ -71,6 +71,19 @@ section h2 {
     color: #4a90e2;
 }
 
+.output-box {
+    background-color: #eef5ff;
+    border: 1px solid #c8ddff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.output-box p,
+.output-box ul {
+    margin-bottom: 0.75rem;
+}
+
 aside {
     background-color: white;
     padding: 1rem;
