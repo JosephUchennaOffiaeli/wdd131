@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 – Dynamic Web Fundamentals – Joseph Uchenna Offiaeli</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals landing page for Joseph Uchenna Offiaeli, highlighting course goals, learning resources, and dynamic JavaScript date updates.">
+    <meta name="author" content="Joseph Uchenna Offiaeli">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank" rel="noopener">Scripture</a></li>
+                <li><a href="https://github.com/your-github-username/wdd131" target="_blank" rel="noopener">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Joseph Uchenna Offiaeli</h1>
+        <section class="card">
+            <h2>Course Landing Page</h2>
+            <p>Welcome to my WDD 131 landing page. This site is designed to introduce the course, share tools and resources, and demonstrate how HTML, CSS, and JavaScript work together.</p>
+            <img src="images/hero.svg" alt="Illustration of a course dashboard and web development tools">
+            <ul>
+                <li>Responsive layout using CSS Grid</li>
+                <li>Flex-based navigation for easy access</li>
+                <li>Dynamic dates from JavaScript</li>
+            </ul>
+        </section>
+        <section class="card">
+            <h2>Learning Focus</h2>
+            <p>WDD 131 is about building dynamic web fundamentals. I will use semantic structure, polished styling, and JavaScript behavior to create a clean and modern homepage.</p>
+            <img src="images/focus.svg" alt="Illustration of learning focus with a screen and growth chart">
+            <div class="info-grid">
+                <div>
+                    <strong>Design</strong>
+                    <p>Typography, spacing, and color harmony.</p>
+                </div>
+                <div>
+                    <strong>Development</strong>
+                    <p>HTML structure, CSS layout, and local assets.</p>
+                </div>
+                <div>
+                    <strong>JavaScript</strong>
+                    <p>Dynamic date values and page metadata.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© <span id="currentyear"></span> Joseph Uchenna Offiaeli · United States</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

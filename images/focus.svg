@@ -1,0 +1,14 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="focusTitle">
+  <title id="focusTitle">Learning focus illustration with charts and device</title>
+  <rect width="800" height="500" rx="32" fill="#ffffff" />
+  <path d="M80 380h640v42a24 24 0 0 1-24 24H104a24 24 0 0 1-24-24v-42z" fill="#eff6ff" />
+  <rect x="120" y="100" width="560" height="220" rx="28" fill="#e0f2fe" />
+  <rect x="160" y="150" width="120" height="28" rx="14" fill="#1d4ed8" />
+  <rect x="160" y="198" width="420" height="18" rx="9" fill="#60a5fa" />
+  <rect x="160" y="238" width="360" height="18" rx="9" fill="#93c5fd" />
+  <rect x="160" y="280" width="270" height="18" rx="9" fill="#bfdbfe" />
+  <circle cx="620" cy="150" r="56" fill="#e0f2fe" />
+  <circle cx="620" cy="150" r="36" fill="#2563eb" />
+  <path d="M620 182v48" stroke="#ffffff" stroke-width="12" stroke-linecap="round" />
+  <path d="M620 148h48" stroke="#ffffff" stroke-width="12" stroke-linecap="round" />
+</svg>
