@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 131 – JavaScript Loops Activity</title>
+  <meta name="description" content="JavaScript loops and operators learning activity.">
+  <meta name="author" content="Joseph Uchenna Offiaeli">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/loops-activity.css">
+</head>
+<body>
+  <header>
+    <h1>JavaScript Loops Activity</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Activity Instructions</h2>
+      <p>Open your browser's Developer Tools (F12) and go to the Console tab. Copy and paste the following code snippets to test them:</p>
+
+      <h3>Variable Declarations</h3>
+      <pre><code>const DAYS = 6;
+const LIMIT = 30;
+let studentReport = [11, 42, 33, 64, 29, 37, 44];</code></pre>
+
+      <h3>1. For Loop - Print values below 30</h3>
+      <pre><code>// for loop
+for (let i = 0; i &lt; studentReport.length; i++) {
+  if (studentReport[i] &lt; LIMIT) {
+    console.log(studentReport[i]);
+  }
+}</code></pre>
+
+      <h3>2. While Loop - Print values below 30</h3>
+      <pre><code>// while loop
+let i = 0;
+while (i &lt; studentReport.length) {
+  if (studentReport[i] &lt; LIMIT) {
+    console.log(studentReport[i]);
+  }
+  i++;
+}</code></pre>
+
+      <h3>3. ForEach Loop - Print values below 30</h3>
+      <pre><code>// forEach loop
+studentReport.forEach(function (item) {
+  if (item &lt; LIMIT) {
+    console.log(item);
+  }
+});</code></pre>
+
+      <h3>4. For...In Loop - Print values below 30</h3>
+      <pre><code>// for...in loop
+for (let i in studentReport) {
+  if (studentReport[i] &lt; LIMIT) {
+    console.log(studentReport[i]);
+  }
+}</code></pre>
+
+      <h3>5. Generate Day Names for Next DAYS Days</h3>
+      <p>Use any type of loop to dynamically produce the day names starting from today.</p>
+      <pre><code>// Example using for loop to generate future day names
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const today = new Date();
+const currentDayIndex = today.getDay();
+
+console.log('Next ' + DAYS + ' days starting tomorrow:');
+for (let i = 1; i &lt;= DAYS; i++) {
+  const futureDayIndex = (currentDayIndex + i) % 7;
+  console.log(dayNames[futureDayIndex]);
+}</code></pre>
+    </section>
+  </main>
+  <footer>
+    Joseph Uchenna Offiaeli
+  </footer>
+
+  <script src="scripts/loops-activity.js"></script>
+</body>
+</html>
