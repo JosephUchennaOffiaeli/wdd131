@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book of Mormon Top 10</title>
+  <meta name="description" content="Book of Mormon chapter favorites application.">
+  <meta name="author" content="Joseph Uchenna Offiaeli">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/bom.css">
+</head>
+<body>
+  <header>
+    <h1>Book of Mormon Top 10</h1>
+  </header>
+  <main>
+    <label for="favchap">Enter your favorite Book of Mormon chapter:</label>
+    <input type="text" id="favchap" placeholder="Alma 5">
+    <button type="button">Add Chapter</button>
+    <p id="chapter-count">Chapters added: 0</p>
+    <ul>
+      <!-- List items will be added here dynamically -->
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; <span id="current-year"></span> | Joseph Uchenna Offiaeli | Nigeria</p>
+  </footer>
+
+  <script src="scripts/bom.js"></script>
+</body>
+</html>
