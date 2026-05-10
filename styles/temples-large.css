@@ -1,0 +1,41 @@
+@media (min-width: 768px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  #primary-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .brand-bar {
+    gap: 2rem;
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  main {
+    padding: 2.5rem;
+  }
+}
