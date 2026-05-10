@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Hamburger Menu</title>
+  <meta name="description" content="Responsive menu with hamburger button for mobile devices.">
+  <meta name="author" content="Joseph Uchenna Offiaeli">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/responsive-menu.css">
+</head>
+<body>
+  <header>
+    <h1>My Website</h1>
+    <button id="menu-button" aria-label="Toggle Navigation Menu">
+      ≡
+      <span class="closing">✕</span>
+    </button>
+    <nav id="navigation-menu">
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome to the Responsive Menu Demo</h2>
+    <p>This is a demonstration of a responsive hamburger menu. Try resizing your browser window or viewing on a mobile device to see the menu adapt to different screen sizes.</p>
+    
+    <section>
+      <h3>How It Works</h3>
+      <p>When the viewport is smaller (mobile size), the menu collapses and shows a hamburger button (≡) in the upper right corner. Clicking this button toggles the navigation menu visibility. On larger screens, the menu is displayed horizontally by default.</p>
+    </section>
+
+    <section>
+      <h3>Responsive Design Principles</h3>
+      <ul>
+        <li>Mobile-first approach</li>
+        <li>Media queries for different screen sizes</li>
+        <li>Flexible layouts and typography</li>
+        <li>Touch-friendly button sizes</li>
+        <li>Clear wayfinding indicators</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> | Joseph Uchenna Offiaeli | Nigeria</p>
+  </footer>
+
+  <script src="scripts/responsive-menu.js"></script>
+</body>
+</html>

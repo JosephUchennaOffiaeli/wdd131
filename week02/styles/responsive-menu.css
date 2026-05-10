@@ -1,0 +1,225 @@
+/* Responsive Hamburger Menu Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Hamburger Menu Button */
+#menu-button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+#menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#menu-button:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Hide the closing icon by default (shown when menu is open) */
+.closing {
+  display: none;
+}
+
+/* Toggle button state */
+#menu-button.open .closing {
+  display: inline;
+}
+
+#menu-button.open {
+  font-size: 0;
+}
+
+/* Navigation Menu - Hidden by default on mobile */
+#navigation-menu {
+  display: none;
+  width: 100%;
+  background-color: #34495e;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+}
+
+/* Show menu when open class is applied */
+#navigation-menu.open {
+  display: block;
+}
+
+#navigation-menu ul {
+  list-style: none;
+  flex-direction: column;
+}
+
+#navigation-menu li {
+  border-bottom: 1px solid #2c3e50;
+}
+
+#navigation-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#navigation-menu a:hover {
+  background-color: #2c3e50;
+}
+
+/* Wayfinding - Active link styling */
+#navigation-menu a.active {
+  background-color: #3498db;
+  font-weight: bold;
+  border-left: 4px solid #2980b9;
+  padding-left: calc(1rem - 4px);
+}
+
+#navigation-menu a.active:hover {
+  background-color: #2980b9;
+}
+
+/* Main Content */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+main h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+main p {
+  margin-bottom: 1.5rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section h3 {
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+section ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Design - Tablet and larger screens */
+@media (min-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  header h1 {
+    flex-grow: 0;
+    margin-right: 2rem;
+  }
+
+  /* Hide hamburger button on larger screens */
+  #menu-button {
+    display: none;
+  }
+
+  /* Always show menu on larger screens */
+  #navigation-menu {
+    display: block;
+    position: static;
+    background-color: transparent;
+    width: auto;
+  }
+
+  #navigation-menu ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #navigation-menu li {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  #navigation-menu li:last-child {
+    border-right: none;
+  }
+
+  #navigation-menu a {
+    padding: 0.5rem 1rem;
+  }
+
+  #navigation-menu a.active {
+    border-left: none;
+    border-bottom: 3px solid #3498db;
+    padding-left: 1rem;
+    padding-bottom: calc(0.5rem - 3px);
+  }
+
+  main {
+    padding: 2rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  header {
+    padding: 1rem 2rem;
+  }
+
+  main {
+    max-width: 1200px;
+  }
+}
