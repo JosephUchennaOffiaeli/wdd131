@@ -56,22 +56,24 @@ header {
 }
 
 #primary-nav a {
-  color: white;
+  color: #1f2937;
   text-decoration: none;
   padding: 0.8rem 1rem;
   border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.08);
-  transition: background-color 0.25s ease, transform 0.25s ease;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
 
 #primary-nav a:hover,
 #primary-nav a:focus {
-  background-color: rgba(255, 255, 255, 0.18);
+  background-color: #ffffff;
   transform: translateX(3px);
 }
 
 #primary-nav a.active {
-  background-color: #e63946;
+  background-color: #b22234;
+  color: white;
   font-weight: 700;
 }
 
