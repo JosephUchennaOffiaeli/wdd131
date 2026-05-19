@@ -1,0 +1,56 @@
+/* Starter CSS for WDD131 Week03 Design Principles */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin: 0;
+  font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f7f7f7;
+  padding: 2rem;
+}
+.banner {
+  background: #eee;
+  color: #222;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+}
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+main h2 {
+  grid-column: 1 / -1;
+  text-align: left;
+  margin: 0 0 0.75rem 0;
+}
+article, aside {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+}
+.callout {
+  /* Fixed padding issue and improved contrast */
+  background-color: #702963; /* original purple */
+  color: #ffffff; /* changed to white to meet contrast requirements */
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+.callout h3 { margin: 0 0 0.5rem 0; }
+aside ul { margin: 0; padding-left: 1.25rem; }
+footer {
+  margin-top: 1.5rem;
+  text-align: left; /* moved footer content to the left */
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  main { grid-template-columns: 1fr; }
+  main h2 { grid-column: auto; }
+}
