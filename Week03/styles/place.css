@@ -1,0 +1,148 @@
+/* --- Core Reset & Variables --- */
+:root {
+    --primary-color: #c8102e; /* Madagascar Brick Red */
+    --secondary-color: #007a3d; /* Forest Green */
+    --text-dark: #222222;
+    --text-light: #ffffff;
+    --bg-light: #f4f4f4;
+    --card-bg: #ffffff;
+    --border-color: #dddddd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Header & Footer Layout --- */
+header, footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0.4rem 0;
+}
+
+/* --- Main Layout: Mobile First --- */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Component */
+.hero-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Card General Styling (Proximity & Alignment) */
+.data-card, .weather-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.data-card h2, .weather-card h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: bold;
+    color: #555555;
+}
+
+/* Rubric 5: SVG Icon visibility rules */
+.weather-icon-wrapper {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem auto;
+    color: #ffb300;
+}
+
+/* --- Rubric 6: Pseudo-Element Emoticon --- */
+/* Target the very first label inside the data card to append a dynamic decoration on wide viewports */
+@media (min-width: 800px) {
+    .data-card ul li:first-child .label::after {
+        content: " 🇲🇬";
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Desktop Layout Grid (min-width 800px) --- */
+@media (min-width: 800px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .hero-container {
+        grid-column: 1 / -1;
+        height: 400px;
+    }
+
+    .hero-image {
+        height: 100%;
+    }
+
+    /* Rubric 5 requirement: SVG hidden on wide layouts */
+    .weather-icon-wrapper {
+        display: none;
+    }
+}
