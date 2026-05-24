@@ -6,13 +6,10 @@
     <title>Madagascar - Country Page</title>
     <meta name="description" content="W03 Assignment: An informative dynamic country page about Madagascar featuring data, weather, and responsive design.">
     <meta name="author" content="Joseph Uchenna Offeiaeli">
-    
     <link rel="stylesheet" href="styles/place.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
-    
     <script src="scripts/place.js" defer></script>
 </head>
 <body>
@@ -23,8 +20,8 @@
     <main>
         <div class="hero-container">
             <picture>
-                <source srcset="images/hero-large.webp" media="(min-width: 800px)">
-                <img src="images/hero-small.webp" alt="Baobab trees in Madagascar" class="hero-image" loading="lazy">
+                <source media="(min-width: 800px)" srcset="images/hero-large.webp">
+                <img src="images/hero-small.webp" srcset="images/hero-small.webp 450w, images/hero-large.webp 800w" sizes="(min-width: 800px) 800px, 100w" alt="Madagascar highlights" class="hero-image" loading="lazy">
             </picture>
         </div>
 
@@ -41,8 +38,8 @@
 
         <section class="weather-card">
             <h2>Weather</h2>
-            <div class="weather-icon-wrapper">
-                <svg class="weather-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="weather-icon-mobile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
                     <circle cx="12" cy="12" r="4"/>
                 </svg>
