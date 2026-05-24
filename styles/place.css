@@ -7,6 +7,8 @@
     --bg-light: #f4f4f4;
     --card-bg: #ffffff;
     --border-color: #dddddd;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --hero-shadow: rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -60,7 +62,7 @@ main {
     width: 100%;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px var(--hero-shadow);
 }
 
 .hero-image {
@@ -70,13 +72,13 @@ main {
     object-fit: cover;
 }
 
-/* Card Design Principles (Proximity & Repetition) */
+/* Card Presentation Rules */
 .data-card, .weather-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 .data-card h2, .weather-card h2 {
@@ -92,7 +94,7 @@ ul {
 
 ul li {
     padding: 0.6rem 0;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,7 +109,7 @@ ul li:last-child {
     color: #555555;
 }
 
-/* Criteria 5: SVG Display constraints - Mobile-only visibility */
+/* Criteria 5: Mobile weather icon layout container */
 .weather-icon-mobile {
     display: block;
     width: 50px;
@@ -129,7 +131,6 @@ ul li:last-child {
         gap: 2rem;
     }
 
-    /* Fixed Criteria 8: Better placement handling for the vertical map asset on desktop views */
     .hero-container {
         grid-column: 1 / -1;
         max-height: 450px;
@@ -142,12 +143,12 @@ ul li:last-child {
         object-fit: contain; 
     }
 
-    /* Fixed Criteria 5: Completely strip SVG presence from the layout flow on desktop */
+    /* Target desktop layout explicitly without breaking global styles */
     .weather-icon-mobile {
-        display: none !important;
+        display: none;
     }
 
-    /* Fixed Criteria 6: Fallback standard text emoticon mapping for automatic regex validation */
+    /* Criteria 6: Clear emoticon mapping rendering text string */
     .data-card h2::after {
         content: " :-) ";
         font-size: 1.3rem;
