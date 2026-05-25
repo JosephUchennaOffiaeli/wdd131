@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNW Trails | Hiker Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pacific Northwest Trails</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trails.html">Trail Finder</a>
+            <a href="hub.html" class="active">Hiker Hub</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hub-layout">
+            <div class="form-container">
+                <h2>Log a Completed Hike</h2>
+                <form id="hike-form">
+                    <div class="form-group">
+                        <label for="hiker-name">Your Name:</label>
+                        <input type="text" id="hiker-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trail-select">Select Trail:</label>
+                        <select id="trail-select" required>
+                            <option value="">-- Choose a Trail --</option>
+                            <option value="Rattlesnake Ledge">Rattlesnake Ledge</option>
+                            <option value="Skyline Trail">Skyline Trail</option>
+                            <option value="Colchuck Lake">Colchuck Lake</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hike-date">Date Completed:</label>
+                        <input type="date" id="hike-date" required>
+                    </div>
+
+                    <button type="submit">Save to Log</button>
+                </form>
+            </div>
+
+            <div class="logs-container">
+                <h2>Your Saved Hiker Logs</h2>
+                <ul id="log-list">
+                    </ul>
+                <button id="clear-logs" class="secondary-btn">Clear All Logs</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PNW Trails | <a href="references.html">References</a></p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

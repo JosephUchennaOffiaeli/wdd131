@@ -1,0 +1,196 @@
+/* Custom properties for a consistent visual color palette theme */
+:root {
+    --primary-color: #2c4a3e; /* Forest Green */
+    --accent-color: #d97736; /* Warm Orange Trail Accent */
+    --text-dark: #222222;
+    --text-light: #ffffff;
+    --bg-light: #f4f6f5;
+    --card-bg: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Main Layout Structure */
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Dynamic Alert Banner */
+#alert-banner {
+    background-color: #ffebe8;
+    color: #d9381e;
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #d9381e;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Hero & Static Grids */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80') center/cover;
+    color: var(--text-light);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.featured-grid, .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Card Styling */
+.card {
+    background: var(--card-bg);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding-bottom: 1rem;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3, .card p, .card span {
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Controls & Form Design */
+.filter-controls {
+    margin-bottom: 1.5rem;
+}
+
+select, input {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+button:hover {
+    background-color: #bf6226;
+}
+
+.secondary-btn {
+    background-color: #666;
+    margin-top: 1rem;
+}
+.secondary-btn:hover {
+    background-color: #444;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: #aaa;
+}
+
+/* --- Responsive Media Queries (Mobile First approach) --- */
+@media (min-width: 650px) {
+    .featured-grid, .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hub-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 950px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNW Trails | Trail Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pacific Northwest Trails</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trails.html" class="active">Trail Finder</a>
+            <a href="hub.html">Hiker Hub</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Find Your Next Adventure</h2>
+        
+        <div class="filter-controls">
+            <label for="difficulty-filter">Filter by Difficulty:</label>
+            <select id="difficulty-filter">
+                <option value="all">All Difficulties</option>
+                <option value="Easy">Easy</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Hard">Hard</option>
+            </select>
+        </div>
+
+        <div id="trail-container" class="grid-container">
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PNW Trails | <a href="references.html">References</a></p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
