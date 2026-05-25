@@ -1,4 +1,4 @@
-// 1. Course Object Literal containing properties and a nested Array of Objects
+// 1. Enhanced Course Object Literal with custom Methods (Functions inside the object)
 const aCourse = {
   code: "WDD131",
   title: "Dynamic Web Fundamentals",
@@ -6,22 +6,41 @@ const aCourse = {
   sections: [
     { section: "001", enrolled: 95, instructor: "Roberto Diaz Rodriguez" },
     { section: "002", enrolled: 80, instructor: "Sarah Gobble" }
-  ]
+  ],
+  
+  // Method to shift enrollment data numbers up or down
+  changeEnrollment: function(sectionNum, isEnrolling) {
+    // Find the specific section object matching the user input string
+    const targetSection = this.sections.find(sec => sec.section === sectionNum);
+    
+    if (targetSection) {
+      if (isEnrolling) {
+        targetSection.enrolled++;
+      } else {
+        // Prevent negative enrollments
+        if (targetSection.enrolled > 0) {
+          targetSection.enrolled--;
+        }
+      }
+      // Re-render the visual table view with updated values
+      renderSections(this);
+    } else {
+      alert(`Section ${sectionNum} does not exist.`);
+    }
+  }
 };
 
-// 2. Function to set basic course details in the header
+// 2. Set basic structural string information
 function setCourseInformation(course) {
   const courseHeader = document.querySelector("#courseName");
-  // Using dot notation and template literals to update the HTML text
   courseHeader.innerHTML = `${course.code} – ${course.title}`;
 }
 
-// 3. Function to render the section objects into HTML table rows
+// 3. Render the dynamic table structure string layouts
 function renderSections(course) {
   const tbody = document.querySelector("#sections tbody");
   let rows = "";
   
-  // Loop through the sections array
   for (const section of course.sections) {
     rows += `<tr>
       <td>${section.section}</td>
@@ -29,13 +48,32 @@ function renderSections(course) {
       <td>${section.instructor}</td>
     </tr>`;
   }
-  
-  // Inject the completed rows string into the DOM
   tbody.innerHTML = rows;
 }
 
-// 4. Initialize the functions on page load
+// 4. Initialize elements and assign interactive event listeners
 document.addEventListener("DOMContentLoaded", () => {
+    // Initial display rendering
     setCourseInformation(aCourse);
     renderSections(aCourse);
+
+    const sectionInput = document.getElementById("sectionNumber");
+    const enrollBtn = document.getElementById("enrollStudent");
+    const dropBtn = document.getElementById("dropStudent");
+
+    // Event Listener for Enrolling a Student
+    enrollBtn.addEventListener("click", () => {
+        const secValue = sectionInput.value.trim();
+        if (secValue) {
+            aCourse.changeEnrollment(secValue, true);
+        }
+    });
+
+    // Event Listener for Dropping a Student
+    dropBtn.addEventListener("click", () => {
+        const secValue = sectionInput.value.trim();
+        if (secValue) {
+            aCourse.changeEnrollment(secValue, false);
+        }
+    });
 });

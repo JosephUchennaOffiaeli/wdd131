@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W04 Activity: JavaScript Objects</title>
+    <title>W04 Activity: JavaScript Objects (Complete)</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 2rem; background-color: #f4f4f4; }
-        h1 { color: #333; }
-        table { border-collapse: collapse; width: 100%; max-width: 600px; background: #fff; margin-top: 1rem; }
-        th, td { border: 1px solid #ccc; padding: 0.5rem 1rem; text-align: left; }
-        th { background-color: #eee; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 2rem; background-color: #f7f9fa; color: #333; }
+        h1 { color: #1a365d; margin-bottom: 0.5rem; }
+        table { border-collapse: collapse; width: 100%; max-width: 600px; background: #fff; margin: 1.5rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        th, td { border: 1px solid #e2e8f0; padding: 0.75rem 1rem; text-align: left; }
+        th { background-color: #edf2f7; color: #4a5568; }
+        .controls { background: #fff; padding: 1rem; max-width: 600px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; gap: 1rem; align-items: center; }
+        input, button { padding: 0.5rem 0.75rem; border-radius: 4px; border: 1px solid #cbd5e0; font-size: 0.95rem; }
+        button { background-color: #3182ce; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #2b6cb0; }
+        button.danger { background-color: #e53e3e; }
+        button.danger:hover { background-color: #c53030; }
     </style>
 </head>
 <body>
 
-    <h1 id="courseName">Loading Course Info...</h1>
+    <h1 id="courseName">Loading Course Details...</h1>
 
     <table id="sections">
         <thead>
@@ -27,6 +33,14 @@
         <tbody>
             </tbody>
     </table>
+
+    <div class="controls">
+        <label for="sectionNumber">Section Number:</label>
+        <input type="text" id="sectionNumber" placeholder="e.g., 001" style="width: 80px;">
+        
+        <button id="enrollStudent">Enroll Student</button>
+        <button id="dropStudent" class="danger">Drop Student</button>
+    </div>
 
     <script src="course.js"></script>
 </body>
