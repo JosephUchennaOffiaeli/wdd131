@@ -68,7 +68,7 @@ header {
 #primary-nav a:hover,
 #primary-nav a:focus {
   background-color: #ffffff;
-  transform: translateX(3px);
+  color: #1d3557;
 }
 
 #primary-nav a.active {
@@ -78,20 +78,21 @@ header {
 }
 
 main {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 1.5rem;
 }
 
 .intro {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .intro h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  color: #1d3557;
 }
 
 .intro p {
@@ -100,30 +101,54 @@ main {
   color: #475569;
 }
 
+/* Base Mobile Grid layout */
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-figure {
+/* Formatted Template layout design card component */
+.temple-card {
   margin: 0;
   background-color: white;
   border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-figure img {
+.temple-card figcaption {
+  padding: 1.25rem;
+  background-color: #ffffff;
+  order: 1; /* Pushes the descriptive text to top layout block area */
+}
+
+.temple-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #1d3557;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.temple-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.temple-card p span {
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.temple-card img {
   display: block;
   width: 100%;
-  height: auto;
-}
-
-figcaption {
-  padding: 1rem;
-  font-weight: 600;
-  background-color: #f8fafc;
+  height: 250px;
+  object-fit: cover;
+  order: 2; /* Positions the picture directly under text block */
 }
 
 footer {
@@ -131,6 +156,7 @@ footer {
   text-align: center;
   color: #475569;
   background-color: #e2e8f0;
+  margin-top: 4rem;
 }
 
 footer p {

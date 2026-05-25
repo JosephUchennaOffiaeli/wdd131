@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temple Album</title>
-  <meta name="description" content="Responsive temple album page with a hamburger menu and picture grid.">
+  <title>W04 Assignment: Filtered Temple Album</title>
+  <meta name="description" content="Responsive temple album page with a hamburger menu and conditional picture criteria grid.">
   <meta name="author" content="Joseph Uchenna Offiaeli">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,59 +20,21 @@
       <h1>Temple Album</h1>
     </div>
     <nav id="primary-nav">
-      <a href="#" class="active">Home</a>
-      <a href="#">Old</a>
-      <a href="#">New</a>
-      <a href="#">Large</a>
-      <a href="#">Small</a>
+      <a href="#" id="home-filter" class="active">Home</a>
+      <a href="#" id="old-filter">Old</a>
+      <a href="#" id="new-filter">New</a>
+      <a href="#" id="large-filter">Large</a>
+      <a href="#" id="small-filter">Small</a>
     </nav>
   </header>
 
   <main>
     <section class="intro">
-      <h2>Explore LDS temple architecture</h2>
+      <h2 id="gallery-header">Explore LDS temple architecture</h2>
       <p>Enjoy a responsive album featuring actual temples from The Church of Jesus Christ of Latter-day Saints.</p>
     </section>
 
-    <section class="gallery">
-      <h2>Temple Gallery</h2>
-      <figure>
-        <img src="images/temples/salt_lake_temple.jpg" alt="Salt Lake Temple">
-        <figcaption>Salt Lake Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/nauvoo_illinois_temple.jpg" alt="Nauvoo Illinois Temple">
-        <figcaption>Nauvoo Illinois Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/washington_dc_temple.jpg" alt="Washington D.C. Temple">
-        <figcaption>Washington D.C. Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/san_diego_temple.jpg" alt="San Diego California Temple">
-        <figcaption>San Diego California Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/laie_hawaii_temple.jpg" alt="Laie Hawaii Temple">
-        <figcaption>Laie Hawaii Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/jordan_river_utah_temple.jpg" alt="Jordan River Utah Temple">
-        <figcaption>Jordan River Utah Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/st_george_utah_temple.jpg" alt="St. George Utah Temple">
-        <figcaption>St. George Utah Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/mesa_arizona_temple.jpg" alt="Mesa Arizona Temple">
-        <figcaption>Mesa Arizona Temple</figcaption>
-      </figure>
-      <figure>
-        <img src="images/temples/rome_italy_temple.jpg" alt="Rome Italy Temple">
-        <figcaption>Rome Italy Temple</figcaption>
-      </figure>
-    </section>
+    <div id="gallery-container" class="gallery"></div>
   </main>
 
   <footer>
