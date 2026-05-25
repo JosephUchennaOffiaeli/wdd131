@@ -1,18 +1,15 @@
 @media (min-width: 768px) {
+  /* Hide the hamburger toggle on desktop viewports */
   #menu-toggle {
     display: none;
   }
 
-  #primary-nav {
+  /* Structural adjustment to let brand title and links sit nicely on one line */
+  header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  header {
     padding: 1.25rem 1.5rem;
   }
 
@@ -20,10 +17,40 @@
     gap: 2rem;
   }
 
+  /* Transition nav link styles from block menu cards to neat inline tabs */
+  #primary-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0; /* Cleared top margin since it's inline now */
+  }
+
+  #primary-nav a {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+  }
+
+  #primary-nav a:hover,
+  #primary-nav a:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    transform: none; /* Disables the mobile text-slide effect */
+  }
+
+  #primary-nav a.active {
+    background-color: #b22234;
+    color: white;
+  }
+
   main {
     padding: 2rem;
   }
 
+  /* Set grid layout profile to 3 columns precisely as you designed */
   .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
@@ -31,6 +58,7 @@
 }
 
 @media (min-width: 1024px) {
+  /* Scale grid footprint smoothly to 4 columns on desktop monitors */
   .gallery {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
