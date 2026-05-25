@@ -1,0 +1,72 @@
+/* General Layout Setup */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+/* Table Architecture Constraints */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Requirement 2: Caption styling at the bottom */
+caption {
+    caption-side: bottom;
+    padding-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #555555;
+    font-style: italic;
+}
+
+/* Headings Styling */
+th, td {
+    padding: 0.75rem 1.2rem;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+/* Align text to left exclusively for feature label column */
+tbody th {
+    text-align: left;
+    font-weight: normal;
+    color: #333333;
+    background-color: transparent;
+}
+
+/* Main Top Header Block */
+.table-header {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Subheader Tier Blocks */
+thead tr:last-child th {
+    background-color: #222222;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Requirement 4: Zebra striping via :nth-child pseudo-class */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Color schemes for check/cross status symbols */
+td.check {
+    color: #4a6fa5;
+    font-weight: bold;
+}
+
+td.cross {
+    font-size: 0.85rem;
+}
