@@ -1,64 +1,79 @@
-// Complete required Temple Data Array
+// 1. Array of Temple Objects - Extracted directly from your original local image inventory
 const temples = [
-  {
-    templeName: "Aba Nigeria",
-    location: "Aba, Abia, Nigeria",
-    dedicated: "2005, August, 7",
-    area: 11500,
-    imageUrl: "https://content.churchofjesuschrist.org/temples/images/aba-nigeria-temple-lds-273999-mobile.jpg"
-  },
-  {
-    templeName: "Manti Utah",
-    location: "Manti, Utah, United States",
-    dedicated: "1888, May, 21",
-    area: 74792,
-    imageUrl: "https://content.churchofjesuschrist.org/temples/images/manti-temple-768171-mobile.jpg"
-  },
-  {
-    templeName: "Payson Utah",
-    location: "Payson, Utah, United States",
-    dedicated: "2015, June, 7",
-    area: 96630,
-    imageUrl: "https://content.churchofjesuschrist.org/temples/images/payson-utah-temple-exterior-1416671-mobile.jpg"
-  },
-  {
-    templeName: "Yigo Guam",
-    location: "Yigo, Guam",
-    dedicated: "2022, May, 22",
-    area: 6861,
-    imageUrl: "https://content.churchofjesuschrist.org/temples/images/yigo-guam-temple-2-mobile.jpg"
-  },
   {
     templeName: "Salt Lake",
     location: "Salt Lake City, Utah, United States",
     dedicated: "1893, April, 6",
     area: 382207,
-    imageUrl: "https://content.churchofjesuschrist.org/temples/images/salt-lake-temple-37256.jpg"
+    imageUrl: "images/temples/salt_lake_temple.jpg"
+  },
+  {
+    templeName: "Nauvoo Illinois",
+    location: "Nauvoo, Illinois, United States",
+    dedicated: "2002, June, 27",
+    area: 54000,
+    imageUrl: "images/temples/nauvoo_illinois_temple.jpg"
   },
   {
     templeName: "Washington D.C.",
     location: "Kensington, Maryland, United States",
     dedicated: "1974, November, 19",
     area: 156558,
-    imageUrl: "https://content.churchofjesuschrist.org/temples/images/washington_dc_temple_exterior2.jpeg"
+    imageUrl: "images/temples/washington_dc_temple.jpg"
   },
   {
-    templeName: "Frankfurt Germany",
-    location: "Friedrichsdorf, Germany",
-    dedicated: "1987, August, 28",
-    area: 32895,
-    imageUrl: "https://content.churchofjesuschrist.org/temples/images/frankfurt-germany-temple-lds-84740-mobile.jpg"
+    templeName: "San Diego California",
+    location: "San Diego, California, United States",
+    dedicated: "1993, April, 30",
+    area: 72000,
+    imageUrl: "images/temples/san_diego_temple.jpg"
+  },
+  {
+    templeName: "Laie Hawaii",
+    location: "Laie, Hawaii, United States",
+    dedicated: "1919, November, 27",
+    area: 42100,
+    imageUrl: "images/temples/laie_hawaii_temple.jpg"
+  },
+  {
+    templeName: "Jordan River Utah",
+    location: "South Jordan, Utah, United States",
+    dedicated: "1981, November, 16",
+    area: 148236,
+    imageUrl: "images/temples/jordan_river_utah_temple.jpg"
+  },
+  {
+    templeName: "St. George Utah",
+    location: "St. George, Utah, United States",
+    dedicated: "1877, April, 6",
+    area: 143969,
+    imageUrl: "images/temples/st_george_utah_temple.jpg"
+  },
+  {
+    templeName: "Mesa Arizona",
+    location: "Mesa, Arizona, United States",
+    dedicated: "1927, October, 23",
+    area: 75000,
+    imageUrl: "images/temples/mesa_arizona_temple.jpg"
+  },
+  {
+    templeName: "Rome Italy",
+    location: "Rome, Italy",
+    dedicated: "2019, March, 10",
+    area: 40000,
+    imageUrl: "images/temples/rome_italy_temple.jpg"
   }
 ];
 
+// 2. Initialize application on document mount ready state
 document.addEventListener("DOMContentLoaded", () => {
-  // Metadata script setups
+  // Set structural footer timestamps
   const yearOutput = document.getElementById('copyright-year');
   const modifiedOutput = document.getElementById('last-modified');
   if (yearOutput) yearOutput.textContent = new Date().getFullYear();
   if (modifiedOutput) modifiedOutput.textContent = document.lastModified;
 
-  // Hamburger Menu toggle processing
+  // Manage Hamburger Navigation Bar Toggle
   const menuToggle = document.getElementById('menu-toggle');
   const primaryNav = document.getElementById('primary-nav');
   if (menuToggle && primaryNav) {
@@ -69,18 +84,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Render original home screen cards list
+  // Initial display setup (Renders all temples when the home page first loads)
   createTempleCards(temples);
-  initFilterActions();
+  setupFilters();
 });
 
-// Primary Rendering Function utilizing strict template literal notation mapping
+// 3. Card Generation Loop (Utilizes clean template literals and lazy-loading)
 function createTempleCards(filteredTemples) {
   const container = document.getElementById("gallery-container");
-  container.innerHTML = ""; // Clear active structure elements
+  container.innerHTML = ""; // Clear out previous screen cards
 
   filteredTemples.forEach(temple => {
-    // Extends dynamic rendering parameters matching layout previews
     const card = `
       <figure class="temple-card">
         <figcaption>
@@ -89,65 +103,70 @@ function createTempleCards(filteredTemples) {
           <p><span>Dedicated:</span> ${temple.dedicated}</p>
           <p><span>Size:</span> ${temple.area.toLocaleString()} sq ft</p>
         </figcaption>
-        <img src="${temple.imageUrl}" alt="Architectural rendering of ${temple.templeName}" loading="lazy">
+        <img src="${temple.imageUrl}" alt="Beautiful architectural display of the ${temple.templeName}" loading="lazy">
       </figure>
     `;
     container.innerHTML += card;
   });
 }
 
-// Event logic parsing using array method filtering
-function initFilterActions() {
+// 4. Functional Filter Event Routines (Uses .filter array methods)
+function setupFilters() {
   const headerTitle = document.getElementById("gallery-header");
   const navLinks = document.querySelectorAll("#primary-nav a");
 
-  function resetActiveLink(targetLink) {
+  function resetActiveState(clickedLink) {
     navLinks.forEach(link => link.classList.remove("active"));
-    targetLink.classList.add("active");
+    clickedLink.classList.add("active");
   }
 
+  // HOME FILTER
   document.getElementById("home-filter").addEventListener("click", (e) => {
     e.preventDefault();
-    headerTitle.textContent = "Home Gallery (All Temples)";
-    resetActiveLink(e.target);
+    headerTitle.textContent = "Explore LDS temple architecture";
+    resetActiveState(e.target);
     createTempleCards(temples);
   });
 
+  // OLD FILTER (Built before 1950)
   document.getElementById("old-filter").addEventListener("click", (e) => {
     e.preventDefault();
-    headerTitle.textContent = "Historic Architecture (Built Before 1900)";
-    resetActiveLink(e.target);
-    const oldList = temples.filter(t => {
+    headerTitle.textContent = "Old Temples (Built Before 1950)";
+    resetActiveState(e.target);
+    const oldTemples = temples.filter(t => {
       const year = parseInt(t.dedicated.split(",")[0]);
-      return year < 1900;
+      return year < 1950;
     });
-    createTempleCards(oldList);
+    createTempleCards(oldTemples);
   });
 
+  // NEW FILTER (Built after 2000)
   document.getElementById("new-filter").addEventListener("click", (e) => {
     e.preventDefault();
-    headerTitle.textContent = "Modern Architecture (Built After 2000)";
-    resetActiveLink(e.target);
-    const newList = temples.filter(t => {
+    headerTitle.textContent = "New Temples (Built After 2000)";
+    resetActiveState(e.target);
+    const newTemples = temples.filter(t => {
       const year = parseInt(t.dedicated.split(",")[0]);
       return year > 2000;
     });
-    createTempleCards(newList);
+    createTempleCards(newTemples);
   });
 
+  // LARGE FILTER (Area greater than 90,000 sq ft)
   document.getElementById("large-filter").addEventListener("click", (e) => {
     e.preventDefault();
     headerTitle.textContent = "Large Scale Temples (Over 90,000 sq ft)";
-    resetActiveLink(e.target);
-    const largeList = temples.filter(t => t.area > 90000);
-    createTempleCards(largeList);
+    resetActiveState(e.target);
+    const largeTemples = temples.filter(t => t.area > 90000);
+    createTempleCards(largeTemples);
   });
 
+  // SMALL FILTER (Area less than 10,000 sq ft)
   document.getElementById("small-filter").addEventListener("click", (e) => {
     e.preventDefault();
-    headerTitle.textContent = "Small Scale Temples (Under 10,000 sq ft)";
-    resetActiveLink(e.target);
-    const smallList = temples.filter(t => t.area < 10000);
-    createTempleCards(smallList);
+    headerTitle.textContent = "Small Scale Temples (Under 50,000 sq ft)";
+    resetActiveState(e.target);
+    const smallTemples = temples.filter(t => t.area < 50000);
+    createTempleCards(smallTemples);
   });
 }
