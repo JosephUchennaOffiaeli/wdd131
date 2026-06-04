@@ -1,31 +1,27 @@
 const products = [
-  { id: "fc1888c6", name: "flux capacitor" },
-  { id: "fc2050q1", name: "power laces" },
-  { id: "jm1235s1", name: "time machine" }
+    { id: "fc1888c6", name: "Flux Capacitor" },
+    { id: "fc2050q1", name: "Power Laces" },
+    { id: "jm1235s1", name: "Time Machine" }
 ];
 
-// Populate dropdown if element exists
+// Logic for Index Page
 const selectElement = document.getElementById("product");
 if (selectElement) {
-    products.forEach(product => {
-        const option = document.createElement("option");
-        option.value = product.id;
-        option.textContent = product.name;
-        selectElement.appendChild(option);
+    products.forEach(p => {
+        let opt = document.createElement("option");
+        opt.value = p.id;
+        opt.textContent = p.name;
+        selectElement.appendChild(opt);
+    });
+
+    document.querySelector('form').addEventListener('submit', () => {
+        let count = parseInt(localStorage.getItem('reviewCount') || 0);
+        localStorage.setItem('reviewCount', count + 1);
     });
 }
 
-// Handle LocalStorage on submission
-const form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', () => {
-        let numReviews = localStorage.getItem('reviewCount') || 0;
-        localStorage.setItem('reviewCount', parseInt(numReviews) + 1);
-    });
-}
-
-// Display count on review.html
-const countDisplay = document.querySelector('#review-count');
-if (countDisplay) {
-    countDisplay.textContent = localStorage.getItem('reviewCount') || 0;
+// Logic for Review Page
+const display = document.getElementById("review-count");
+if (display) {
+    display.textContent = localStorage.getItem('reviewCount') || 0;
 }
