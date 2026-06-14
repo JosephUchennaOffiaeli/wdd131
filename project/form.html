@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Activity - Entry Form</title>
+    <meta name="description" content="Submit technical data and operational tasks directly into the tracking engine database.">
+    <link rel="stylesheet" href="css/project.css">
+    <script src="js/project.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Performance Tracker</h1>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="form.html" class="active">Log Activity</a></li>
+                <li><a href="review.html">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Activity Logging Portal</h2>
+            <p>Fill out the parameters below. All form fields strictly comply with core submission validations.</p>
+            
+            <form id="project-form" action="review.html" method="get">
+                <div class="form-group">
+                    <label for="task-name">Activity / Task Name:</label>
+                    <input type="text" id="task-name" name="taskName" required placeholder="e.g., Module Compilation">
+                </div>
+
+                <div class="form-group">
+                    <label for="task-type">Module Category:</label>
+                    <select id="task-type" name="taskType" required>
+                        <option value="" disabled selected>Select a category...</option>
+                        <option value="Optimization">Optimization / Auditing</option>
+                        <option value="Development">Full-Stack Development</option>
+                        <option value="Operations">Military / Logistics Operations</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority-level">Priority Weight:</label>
+                    <input type="number" id="priority-level" name="priority" min="1" max="5" required placeholder="1 (Low) to 5 (Critical)">
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Operational Notes:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Enter specific logs, constraints, or verification flags..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">Commit Data Entry</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Joseph Uchenna Offiaeli | Chicago, IL</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p><a href="references.html">Project References & Citations</a></p>
+    </footer>
+</body>
+</html>

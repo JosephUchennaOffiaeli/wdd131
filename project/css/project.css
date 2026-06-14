@@ -1,0 +1,341 @@
+/* --- Root Core Variables & Reset --- */
+:root {
+    --primary-color: #002855;       /* Military Navy */
+    --secondary-color: #d00000;     /* Alert Crimson Accent */
+    --text-dark: #2b2d42;
+    --bg-light: #f4f5f7;
+    --white: #ffffff;
+    --border-radius: 6px;
+    --transition-speed: 0.25s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Layout Headers & Navigation --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    width: 100%;
+}
+
+#nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+#nav-menu li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+#nav-menu li a:hover, 
+#nav-menu li a.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* --- Main Layout Wrapper --- */
+main {
+    flex: 1;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- Component Typography & Sections --- */
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+}
+
+/* --- Hero Image Module --- */
+.hero-section {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+/* --- Component Dynamic Grid Cards --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card .badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #edf2f7;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.card button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background var(--transition-speed);
+}
+
+.card button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Validated Form Subsystem --- */
+.form-container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 40, 85, 0.1);
+}
+
+#submit-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: 100%;
+    transition: background var(--transition-speed);
+}
+
+#submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* --- Analytics & Confirmation Layout --- */
+.analytics-card {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.success-banner {
+    background-color: #ecfdf5;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+    font-weight: 600;
+}
+
+.counter-text {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+.highlight {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.action-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-link {
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: background var(--transition-speed);
+}
+
+.btn-link:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-link.secondary {
+    background-color: #e2e8f0;
+    color: var(--text-dark);
+}
+
+.btn-link.secondary:hover {
+    background-color: #cbd5e1;
+}
+
+/* --- Sticky Footers --- */
+footer {
+    background-color: var(--primary-color);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    margin-top: auto;
+    border-top: 4px solid var(--secondary-color);
+}
+
+footer p {
+    margin-bottom: 0.4rem;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* --- 📱 Media Queries (Larger viewports / Desktops) --- */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 10%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        width: auto;
+    }
+
+    #nav-menu {
+        gap: 0.5rem;
+    }
+
+    main {
+        padding: 3rem 10%;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .action-links {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

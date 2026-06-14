@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics & Confirmations</title>
+    <meta name="description" content="View persistent submission analytics and verified localStorage session records.">
+    <link rel="stylesheet" href="css/project.css">
+    <script src="js/project.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Performance Tracker</h1>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="form.html">Log Activity</a></li>
+                <li><a href="review.html" class="active">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="analytics-card">
+            <h2>Submission Success</h2>
+            <div class="success-banner">
+                <p>✔ Data stream committed to local environment parameters successfully.</p>
+            </div>
+            
+            <div id="stats-display">
+                <h3>Persistent Telemetry</h3>
+                <p class="counter-text">Total logged sessions in this browser lifecycle: <span id="total-submissions" class="highlight">0</span></p>
+            </div>
+            <div class="action-links">
+                <a href="form.html" class="btn-link">Log Another Task</a>
+                <a href="index.html" class="btn-link secondary">Return Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Joseph Uchenna Offiaeli | Chicago, IL</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p><a href="references.html">Project References & Citations</a></p>
+    </footer>
+</body>
+</html>
